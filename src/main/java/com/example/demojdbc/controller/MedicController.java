@@ -4,6 +4,7 @@ import com.example.demojdbc.dto.MedicRequest;
 import com.example.demojdbc.mapper.MedicMapper;
 import com.example.demojdbc.model.Medic;
 import com.example.demojdbc.service.MedicService;
+import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -31,7 +32,7 @@ public class MedicController {
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<Medic>> getMedic(){
+    public ResponseEntity<List<Medic>> getMedic(@RequestParam(value = " ", defaultValue = "") String firstName, String lastName, int Age, String Specialty){
         return ResponseEntity.ok()
                 .body(medicService.getMedics());
     }
@@ -48,6 +49,7 @@ public class MedicController {
                 .body(medicService.getMedicsFilterLastName(lastName));
     }
 
+    @Transactional
     @PostMapping("/new/multiple")
     public ResponseEntity<String> multipleAddMedic(@RequestBody @Valid MedicRequest medicRequest, @RequestParam int idshift){
         return ResponseEntity.ok()

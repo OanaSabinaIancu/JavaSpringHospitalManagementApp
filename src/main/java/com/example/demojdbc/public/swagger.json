@@ -1,0 +1,17 @@
+swagger: "2.0"
+info:
+version: "1.0.0"
+title: Lotus Hospital Management App API
+host: localhost:3000
+basePath: /
+schemes:
+- http
+paths:
+/medic:
+get:
+summary: Gets a list of medical corpse.
+produces:
+- application/json
+responses:
+200:
+description: Returns all medical corpes from the system that the user has access to.

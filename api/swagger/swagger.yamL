@@ -1,0 +1,273 @@
+swagger: "2.0"
+info:
+	version: "1.0.0"
+	title: Lotus Hospital Management App API
+host: localhost:3000
+basePath: /
+schemes:
+	- http
+paths:
+	/medic:
+		get:
+			summary: Gets a list of medical corpse.
+			produces:
+				- application/json
+			responses:
+				200:
+					description: Returns all medical corpes from the system that the user has access to.
+					schema:
+						type: object
+						properties:
+							idMedic:
+								type: integer
+								description: The medical corp's ID.
+							idShift:
+								type: integer
+								description: The medical corp's shift.
+							firstName:
+								type: string
+								description: The medical corp's first name.
+							lastName:
+								type: string
+								description: The medical corp's last name.
+							age:
+								type: integer
+								description: The medical corp's age.
+							specialty:
+								type: string
+								description: The medical corp's specialty.
+		post:
+			summary: Add a new medical corp.
+			responses:
+				200:
+					description: Add a new medic on table.
+					schema:
+						type: object
+						properties:
+							idMedic:
+								type: integer
+								description: The medical corp's ID.
+							firstName:
+								type: string
+								description: The medical corp's first name.
+							lastName:
+								type: string
+								description: The medical corp's last name.
+							age:
+								type: integer
+								description: The medical corp's age.
+							specialty:
+								type: string
+								description: The medical corp's specialty.
+	/nurse:
+		get:
+			summary: Gets a list of nurses.
+			produces:
+				- application/json
+			responses:
+				200:
+					description: Returns all nurses from the system that the user has access to.
+					schema:
+						type: object
+						properties:
+							idNurse:
+								type: integer
+								description: The nurse's ID.
+							idShift:
+								type: integer
+								description: The nurse's shift ID.
+							firstName:
+								type: string
+								description: The nurse's first name.
+							lastName:
+								type: string
+								description: The nurse's last name.
+							age:
+								type: integer
+								description: The nurse's age.
+
+		post:
+			summary: Add a new nurse.
+			responses:
+				200:
+					description: Add a new nurse on table.
+					schema:
+						type: object
+						properties:
+							idMedic:
+								type: integer
+								description: The nurse's ID.
+							firstName:
+								type: string
+								description: The nurse's first name.
+							lastName:
+								type: string
+								description: The nurse's last name.
+							age:
+								type: integer
+								description: The nurse's age.
+	/pacient:
+		get:
+			summary: Gets a list of pacients.
+			produces:
+				- application/json
+			responses:
+				200:
+					description: Returns all pacients from the system that the user has access to.
+					schema:
+						type: object
+						properties:
+							idMedic:
+								type: integer
+								description: The medical corp's ID.
+							idPacient:
+								type: integer
+								description: The pacient's ID.
+							firstName:
+								type: string
+								description: The pacient's first name.
+							lastName:
+								type: string
+								description: The pacient's last name.
+
+
+		post:
+			summary: Add a new pacient.
+			responses:
+				200:
+					description: Add a new pacient on table.
+					schema:
+						type: object
+						properties:
+							idMedic:
+								type: integer
+								description: The pacient's ID.
+							firstName:
+								type: string
+								description: The pacient's first name.
+							lastName:
+								type: string
+								description: The pacient's last name.
+	/office:
+		get:
+			summary: Gets a list of offices.
+			produces:
+				- application/json
+			responses:
+				200:
+					description: Returns all offices from the system that the user has access to.
+					schema:
+						type: object
+						properties:
+							idNurse:
+								type: integer
+								description: The medical corp's ID.
+							idSalon:
+								type: integer
+								description: The office's ID.
+							firstName:
+								type: string
+								description: The office's first name.
+							lastName:
+								type: string
+								description: The office's last name.
+
+
+		post:
+			summary: Add a new office.
+			responses:
+				200:
+					description: Add a new office on table.
+					schema:
+						type: object
+						properties:
+							idMedic:
+								type: integer
+								description: The office's ID.
+							floor:
+								type: string
+								description: Office's floor.
+	/salon:
+		get:
+			summary: Gets a list of salons.
+			produces:
+				- application/json
+			responses:
+				200:
+					description: Returns all salons from the system that the user has access to.
+					schema:
+						type: object
+						properties:
+							idNurse:
+								type: integer
+								description: The salon's ID.
+							idSalon:
+								type: integer
+								description: The salon's ID.
+							firstName:
+								type: string
+								description: The salon's first name.
+							lastName:
+								type: string
+								description: The salons's last name.
+
+
+		post:
+			summary: Add a new salon.
+			responses:
+				200:
+					description: Add a new salon on table.
+					schema:
+						type: object
+						properties:
+							idMedic:
+								type: integer
+								description: The salon's ID.
+							floor:
+								type: string
+								description: Salon's floor.
+	/shift:
+		get:
+			summary: Gets a list of shifts.
+			produces:
+				- application/json
+			responses:
+				200:
+					description: Returns all shifts from the system that the user has access to.
+					schema:
+						type: object
+						properties:
+							idNurse:
+								type: integer
+								description: The shift's ID.
+							idSalon:
+								type: integer
+								description: The shift's ID.
+							firstName:
+								type: string
+								description: The shift's first name.
+							lastName:
+								type: string
+								description: The shift's last name.
+
+
+		post:
+			summary: Add a new shift.
+			responses:
+				200:
+					description: Add a new shift on table.
+					schema:
+						type: object
+						properties:
+							idShift:
+								type: integer
+								description: The shift's ID.
+							idMedic:
+								type: integer
+								description: The medic's ID.
+							idNurse:
+								type: integer
+								description: The nurse's ID.
+							name:
+								type: string
+								description: Shift's name.
