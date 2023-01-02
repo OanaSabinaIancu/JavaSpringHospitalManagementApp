@@ -45,4 +45,5 @@ public class SalonController {
                 .body(salonService.getSalonFilterFloor(floor));
     }
 
+
 }

@@ -7,9 +7,11 @@ import com.example.demojdbc.model.Salon;
 import com.example.demojdbc.repository.NurseRepository;
 import com.example.demojdbc.repository.SalonRepository;
 import org.springframework.data.domain.Sort;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SalonService {
 
     private NurseRepository nurseRepository;

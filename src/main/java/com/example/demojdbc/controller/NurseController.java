@@ -30,4 +30,6 @@ public class NurseController {
         return ResponseEntity.ok()
                 .body(nurseService.getNurses());
     }
+
+
 }

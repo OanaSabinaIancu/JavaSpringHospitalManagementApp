@@ -38,4 +38,16 @@ public class MedicService {
     public List<Medic> getMedicsFilterLastName(String lastName){
         return medicRepository.findAll(Sort.by(Sort.Direction.ASC, "lastName"));
     }
+
+    public String multipleIntroduction(int n){
+        for(int i = 1; i<=n; i ++){
+            if(i > 20){
+                throw new RuntimeException("You can not use multiple introduction for mor than 20 records ");
+            }
+
+            Medic medic = new Medic(1, "MedicFirstName"+i, "MedicLastName", 26 + (int)i, "specialty"+i);
+            medicRepository.save(medic);
+        }
+        return "Success!!";
+    }
 }

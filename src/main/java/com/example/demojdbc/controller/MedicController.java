@@ -47,4 +47,11 @@ public class MedicController {
         return ResponseEntity.ok()
                 .body(medicService.getMedicsFilterLastName(lastName));
     }
+
+    @PostMapping("/new/multiple")
+    public ResponseEntity<String> multipleAddMedic(@RequestBody @Valid MedicRequest medicRequest, @RequestParam int idshift){
+        return ResponseEntity.ok()
+                .body(medicService.multipleIntroduction(21));
+    }
+
 }
