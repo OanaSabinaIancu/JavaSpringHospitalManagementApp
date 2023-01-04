@@ -18,9 +18,8 @@ public class OfficeController {
 
     private OfficeMapper officeMapper;
 
-    public OfficeController(OfficeService officeService, OfficeMapper officeMapper) {
+    public OfficeController(OfficeService officeService) {
         this.officeService = officeService;
-        this.officeMapper = officeMapper;
     }
 
     @PostMapping("/new")

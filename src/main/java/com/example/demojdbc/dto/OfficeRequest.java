@@ -26,6 +26,10 @@ public class OfficeRequest {
         this.floor = floor;
     }
 
+    public OfficeRequest() {
+
+    }
+
     public Medic getMedic() {
         return medic;
     }

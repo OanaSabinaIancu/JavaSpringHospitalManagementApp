@@ -44,6 +44,4 @@ public class SalonController {
         return ResponseEntity.ok()
                 .body(salonService.getSalonFilterFloor(floor));
     }
-
-
 }

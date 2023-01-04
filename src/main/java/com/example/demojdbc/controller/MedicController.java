@@ -20,9 +20,8 @@ public class MedicController {
 
     private MedicMapper medicMapper;
 
-    public MedicController(MedicService medicService, MedicMapper medicMapper) {
+    public MedicController(MedicService medicService) {
         this.medicService = medicService;
-        this.medicMapper = medicMapper;
     }
 
     @PostMapping("/new")
@@ -55,5 +54,4 @@ public class MedicController {
         return ResponseEntity.ok()
                 .body(medicService.multipleIntroduction(21));
     }
-
 }

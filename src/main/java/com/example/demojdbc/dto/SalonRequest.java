@@ -31,6 +31,10 @@ public class SalonRequest {
         this.pacientsList = pacientsList;
     }
 
+    public SalonRequest() {
+
+    }
+
     public int getIdSalon() {
         return idSalon;
     }
