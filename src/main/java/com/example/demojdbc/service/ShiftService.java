@@ -43,6 +43,14 @@ public class ShiftService {
         return shiftRepository.findAll();
     }
 
+//    public Medic saveNewMedic(Medic medic, int idShift){
+//        Shift shift = shiftRepository.findById(idShift)
+//                .orElseThrow(() -> new RuntimeException("Id for shift entity is not valid "));
+//        medic.setShift(shift);
+//
+//        return medicRepository.save(medic);
+//    }
+
     public Shift saveNewShift(Shift shift){
         return shiftRepository.save(shift);
     }
